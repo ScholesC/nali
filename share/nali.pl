@@ -18,7 +18,7 @@ sub qqwry {
     }
 
     my $addr;
-    $addr=`__QQWRYNALI $ip|iconv -f GBK -t $lang`;
+    $addr=`qqwrynali $ip|iconv -f GBK -t $lang`;
 
     #if (index($iconv,"iconv")<0) {
     #    $addr=`qqwrynali $ip`;

@@ -1,3 +1,7 @@
+*.swp
+
 config.h
+config.mak
 bin/nali
 bin/nali-update
+bin/qqwrynali
