@@ -1,13 +1,13 @@
 #!/bin/sh
 prefix=/usr/local
 if test x"$1" = x"-h" -o x"$1" = x"--help" ; then
-echo "Usage: ./configure [options]"
-echo "  --help               print this message"
-echo "  --prefix=PREFIX      default:/usr/local"
-echo "  --bindir=BINDIR      default:$prefix/bin"
-echo "  --datadir=BINDIR     default:$prefix/share"
-echo ""
-exit 1
+    echo "Usage: ./configure [options]"
+    echo "  --help               print this message"
+    echo "  --prefix=PREFIX      default:/usr/local"
+    echo "  --bindir=BINDIR      default:$prefix/bin"
+    echo "  --datadir=BINDIR     default:$prefix/share"
+    echo ""
+    exit 1
 fi
 
 if test ! -d ./libqqwry
@@ -40,24 +40,6 @@ for opt do
             datadir="$optarg"
             ;;
     esac
-done
-
-# Check all directory arguments for consistency.
-for ac_var in prefix bindir datadir
-do
-  eval ac_val=\$$ac_var
-  # Remove trailing slashes.
-  case $ac_val in
-    */ )
-      ac_val=`expr "X$ac_val" : 'X\(.*[^/]\)' \| "X$ac_val" : 'X\(.*\)'`
-      eval $ac_var=\$ac_val;;
-  esac
-  # Be sure to have absolute directory names.
-  case $ac_val in
-    [\\/$]* | ?:[\\/]* )  continue;;
-    NONE | '' ) case $ac_var in *prefix ) continue;; esac;;
-  esac
-  as_fn_error $? "expected an absolute directory name for --$ac_var: $ac_val"
 done
 
 if test "z$bindir" = "z" 
